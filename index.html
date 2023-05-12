@@ -9,11 +9,10 @@
   <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script type="text/babel">
     // props는 object이기 때문에 생략해서 {text} 이렇게 적어줌
-    function Btn({ text, onClick, fontSize = 12 }) {
+    function Btn({ text, fontSize = 12 }) {
       console.log(text, 'was rendered');
       return (
         <button
-          onClick={onClick}
           style={{
             backgroundColor: 'tomato',
             color: 'white',
@@ -27,17 +26,16 @@
         </button>
       );
     }
+    // 잘못된, 원치않은 type을 넣은 경우 콘솔에 에러 발생하도록 함
+    // 반드시 전달해야하는 props 있는 경우 isRequired로 경고 줄 수도 있음
     Btn.propTypes = {
       text: PropTypes.string.isRequired,
       fontSize: PropTypes.number,
     };
-    const MemorizedBtn = React.memo(Btn);
     function App() {
-      const [value, setValue] = React.useState('Save Changes');
-      const changeValue = () => setValue('Revert Changes');
       return (
         <div>
-          <Btn text={value} onClick={changeValue} fontSize={18} />
+          <Btn text="Save Changes" fontSize={18} />
           <Btn text={'Continue'} />
         </div>
       );
