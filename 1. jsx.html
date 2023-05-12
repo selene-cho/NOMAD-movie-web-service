@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- ReactDOM이 React element들을 가져다 놓을 곳 -->
+    <div id="root"></div>
+  </body>
+  <!-- React JS, React-dom 설치-->
+  <!-- React JS : 어플리케이션이 interactive하도록 만들어주는 라이브러리-->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <!-- React-dom : 모든 React element들을 HTML body 안에 생성되도록 해주는 라이브러리 / 패키지-->
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // root를 가져와서 안에 React Element 생성 시작
+    const root = document.getElementById('root');
+
+    // React로 HTML 생성
+    // 첫번째 argument: 유효한 html 태그
+    // 두번째 argument: 첫번째 argument의 property들(props) (class, id, style etc.)
+    // -> event listener도 등록가능 on~
+    // 세번째 argument: 첫번째 argument의 content (안에 무엇을 넣을지)
+    // const h3 = React.createElement(
+    //   'h3',
+    //   {
+    //     id: 'title',
+    //     style: { color: 'tomato' },
+    //     onMouseEnter: () => console.log('mouse enter'),
+    //   },
+    //   "Hello, I'm a title"
+    // );
+    const Title = (
+      <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
+        Hello, I'm a Title
+      </h3>
+    );
+
+    // const btn = React.createElement(
+    //   'button',
+    //   {
+    //     onClick: () => console.log("I'm clicked"),
+    //     style: {
+    //       backgroundColor: 'pink',
+    //       border: 'none',
+    //       borderRadius: '3px',
+    //       padding: '5px 10px',
+    //     },
+    //   },
+    //   'Click me'
+    // );
+    const Button = (
+      <button
+        style={{
+          backgroundColor: 'pink',
+          border: 'none',
+          borderRadius: '3px',
+          padding: '5px 10px',
+        }}
+        onClick={() => console.log("I'm clicked")}
+      >
+        Click me
+      </button>
+    );
+
+    // array 안에 다른 것들을 넣어주면 다 보여줄 수 있음
+    const container = React.createElement('div', null, [Title, Button]);
+
+    // render : 사용자에게 보여준다!
+    // 첫번째 argument를 root안에 넣음
+    ReactDOM.render(container, root);
+  </script>
+</html>

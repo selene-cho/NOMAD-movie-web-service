@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- ReactDOM이 React element들을 가져다 놓을 곳 -->
+    <div id="root"></div>
+  </body>
+  <!-- React JS, React-dom 설치-->
+  <!-- React JS : 어플리케이션이 interactive하도록 만들어주는 라이브러리-->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <!-- React-dom : 모든 React element들을 HTML body 안에 생성되도록 해주는 라이브러리 / 패키지-->
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <!-- babel import -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // root를 가져와서 안에 React Element 생성 시작
+    const root = document.getElementById('root');
+
+    function Title() {
+      return (
+        <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
+          Hello, I'm a Title
+        </h3>
+      );
+    }
+
+    const Button = () => (
+      <button
+        style={{
+          backgroundColor: 'pink',
+          border: 'none',
+          borderRadius: '3px',
+          padding: '5px 10px',
+        }}
+        onClick={() => console.log("I'm clicked")}
+      >
+        Click me
+      </button>
+    );
+
+    // 대문자로 시작하면 내가 만든 component 다른 곳에서 사용할 때 (JSX 문법)
+    // 소문자로 시작하면 HTML element
+    const Container = () => (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+
+    // render : 사용자에게 보여준다!
+    // 첫번째 argument를 root안에 넣음
+    ReactDOM.render(<Container />, root);
+  </script>
+</html>

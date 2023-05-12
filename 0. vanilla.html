@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <!-- 1. html 만들어주기 -->
+  <body>
+    <span>Total clicks: 0</span>
+    <button id="btn">Click me</button>
+  </body>
+  <script>
+    let counter = 0;
+    // 2. javascript에서 만든 html 가져오기
+    const button = document.getElementById('btn');
+    const span = document.querySelector('span');
+    function handleClick() {
+      // 4. 데이터 업데이트 (브라우저 콘솔에 counter 치면 클릭한 수 만큼 숫자 올라간 것 보임)
+      counter = counter + 1;
+      // html 업데이트 해주는 것도 잊지 말기
+      span.innerText = `Total clicks: ${counter}`;
+    }
+    // 3. event 감지
+    button.addEventListener('click', handleClick);
+  </script>
+</html>
