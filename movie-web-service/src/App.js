@@ -2,65 +2,38 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [isChanged, setIsChanged] = useState(true);
-  const [coins, setCoins] = useState([]);
-  const [coin, setCoin] = useState(0);
-  const [amount, setAmount] = useState(0);
-  const [changeToCoin, setChangeToCoin] = useState(0);
-  const onChange = (e) => {
-    setCoin(e.target.value);
-  };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log('coin', coin);
-    console.log('amount', amount);
-    setChangeToCoin(amount / coin);
-  };
-  const handleInput = (e) => {
-    setAmount(e.target.value);
+  const [movies, setMovies] = useState([]);
+  const getMovies = async () => {
+    const json = await (
+      await fetch(
+        'https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8?sort_by=year'
+      )
+    ).json();
+    setMovies(json.data.movies);
+    setLoading(false);
   };
   useEffect(() => {
-    fetch('https://api.coinpaprika.com/v1/tickers')
-      .then((response) => response.json())
-      .then((json) => {
-        setCoins(json);
-        setLoading(false);
-        setIsChanged(true);
-      });
+    getMovies();
   }, []);
-  useEffect(() => {
-    setIsChanged(false);
-  }, [changeToCoin]);
   return (
     <div>
-      <h1>The Coins! {loading ? '' : `(${coins.length})`}</h1>
       {loading ? (
-        <strong>Loading...</strong>
+        <h1>Loading...</h1>
       ) : (
-        <>
-          <select onChange={onChange}>
-            <option>Select Coin!</option>
-            {coins.map((coin) => (
-              <option key={coin.id} value={coin.quotes.USD.price}>
-                {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
-              </option>
-            ))}
-          </select>
-          <div>
-            <form onSubmit={onSubmit}>
-              <label htmlFor="money">Enter Your Money : $</label>
-              <input
-                id="money"
-                value={amount}
-                type="number"
-                placeholder="USD"
-                onChange={handleInput}
-              />
-              <button>Change To Coin</button>
-            </form>
-          </div>
-          {isChanged ? null : <h3>You can buy {changeToCoin} coin</h3>}
-        </>
+        <div>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <img src={movie.medium_cover_image} alt="movie poster" />
+              <h2>{movie.title}</h2>
+              <p>{movie.summary}</p>
+              <ul>
+                {movie.genres.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
