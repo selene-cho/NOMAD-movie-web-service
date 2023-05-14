@@ -9,6 +9,7 @@ function App() {
     if (toDo === '') {
       return; // toDo 비어 있으면 이 함수 작동 하지 않도록
     }
+    // create new array
     setToDos((currentArray) => [toDo, ...currentArray]);
     setToDo('');
   };
@@ -24,6 +25,12 @@ function App() {
         />
         <button>Add To Do</button>
       </form>
+      <hr />
+      <ul>
+        {toDos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
