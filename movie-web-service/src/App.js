@@ -59,7 +59,7 @@ function App() {
               <button>Change To Coin</button>
             </form>
           </div>
-          {isChanged ? null : <h3>You can get {changeToCoin} coin</h3>}
+          {isChanged ? null : <h3>You can buy {changeToCoin} coin</h3>}
         </>
       )}
     </div>
