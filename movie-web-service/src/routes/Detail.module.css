@@ -14,3 +14,12 @@
   content: '';
   background-color: rgba(0, 0, 0, 0.7);
 }
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  color: whitesmoke;
+}

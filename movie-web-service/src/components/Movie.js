@@ -5,7 +5,9 @@ import styles from './Movie.module.css';
 export default function Movie({ id, year, coverImg, title, summary, genres }) {
   return (
     <div className={styles.container}>
-      <img src={coverImg} alt={title} className={styles.img} />
+      <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>
+        <img src={coverImg} alt={title} className={styles.img} />
+      </Link>
       <div className={styles.content}>
         <h2 className={styles.title}>
           <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>🎬 {title}</Link>
