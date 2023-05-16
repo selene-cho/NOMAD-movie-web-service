@@ -24,14 +24,20 @@ export default function Detail() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className={styles.container}>
+        <div
+          className={styles.container}
+          style={{
+            backgroundImage: `url(${movie.background_image})`,
+          }}
+        >
           <MovieDetail
             title={movie.title}
             runTime={movie.runtime}
-            coverImg={movie.medium_cover_image}
+            coverImg={movie.large_cover_image}
             year={movie.year}
             rating={movie.rating}
             genres={movie.genres}
+            desc={movie.description_full}
           />
         </div>
       )}

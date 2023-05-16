@@ -8,6 +8,7 @@ export default function MovieDetail({
   genres,
   year,
   rating,
+  desc,
 }) {
   return (
     <div className={styles.container}>
@@ -15,20 +16,18 @@ export default function MovieDetail({
       <div className={styles.contentsBox}>
         <h3 className={styles.title}>🎥 &nbsp;{title}</h3>
         <div className={styles.content}>
-          <p>&nbsp;Run Time ⏱️ _ {runTime}''</p>
-          <p>&nbsp;Rating &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⭐️ _ {rating}</p>
-          <p>
-            &nbsp;Year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📆 _{' '}
-            {year}
+          <p className={styles.year}>&nbsp;{year}</p>
+          <ul className={styles.genres}>
+            {genres.map((g) => (
+              <li key={g}>&nbsp;{g}</li>
+            ))}
+          </ul>
+          <p className={styles.time}>&nbsp;⏱️ &nbsp;{runTime}''</p>
+          <p className={styles.rating}>
+            &nbsp;⭐️ &nbsp;{rating}
+            <span> / 10</span>
           </p>
-          <div className={styles.genres}>
-            &nbsp;Genre &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🎬 _&nbsp;
-            <ul>
-              {genres.map((g) => (
-                <li key={g}>{g}</li>
-              ))}
-            </ul>
-          </div>
+          <p className={styles.desc}>{desc}</p>
         </div>
       </div>
     </div>

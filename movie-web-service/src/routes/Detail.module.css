@@ -1,7 +1,16 @@
 .container {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: whitesmoke;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container::before {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.7);
 }
