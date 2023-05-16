@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NOMAD-movie-web-service/static/css/main.e79787fc.css",
+    "main.js": "/NOMAD-movie-web-service/static/js/main.1a8119d8.js",
+    "index.html": "/NOMAD-movie-web-service/index.html",
+    "main.e79787fc.css.map": "/NOMAD-movie-web-service/static/css/main.e79787fc.css.map",
+    "main.1a8119d8.js.map": "/NOMAD-movie-web-service/static/js/main.1a8119d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e79787fc.css",
+    "static/js/main.1a8119d8.js"
+  ]
+}
