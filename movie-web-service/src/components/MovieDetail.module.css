@@ -67,12 +67,9 @@
   .container {
     padding: 10% 5%;
   }
-  .img {
-    /* height: 75%; */
-  }
   .contentsBox {
     font-size: 18px;
-    /* margin: 10% auto; */
+    padding: 8% 5%;
   }
   .title {
     font-size: 1.5rem;
@@ -85,7 +82,7 @@
     font-size: 12px;
   }
   .desc {
-    max-height: 40%;
+    max-height: 35%;
     overflow-y: scroll;
     font-size: 14px;
   }
