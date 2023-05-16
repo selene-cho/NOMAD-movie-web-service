@@ -1,0 +1,34 @@
+.container {
+  width: 750px;
+  max-width: 800px;
+  border-radius: 10px;
+  display: flex;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-shadow: 1px 1px 5px 3px rgba(232, 232, 232, 0.626);
+}
+.contentsBox {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 30px 0;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content {
+  padding: 10px 0;
+}
+
+.img {
+  border-radius: 10px;
+}
+
+.genres {
+  display: flex;
+}

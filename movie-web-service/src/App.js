@@ -7,7 +7,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movie" element={<Detail />} />
+        {/* ':' 뒤의 값 아무렇게나 지정 가능 */}
+        <Route path="/movie/:id" element={<Detail />} />
       </Routes>
     </Router>
   );
