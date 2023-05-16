@@ -1,0 +1,65 @@
+.container {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 2fr;
+  grid-gap: 10px;
+  margin-bottom: 50px;
+  padding: 20px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #f6f6f6;
+  color: inherit;
+  box-shadow: 0 10px 27px -5px rgba(227, 227, 241, 0.25),
+    0 8px 16px -8px rgba(255, 255, 255, 0.025),
+    0 -6px 16px -6px rgba(255, 255, 255, 0.025);
+}
+
+.img {
+  position: relative;
+  top: -50px;
+  max-width: 150px;
+  width: 100%;
+  margin-left: 5px;
+  margin-right: 30px;
+  box-shadow: 0 20px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.025),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5px;
+}
+.title,
+.year {
+  font-weight: 300;
+}
+.title {
+  margin-bottom: 15px;
+}
+
+.title a {
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #2c2c2c;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.year {
+  margin-bottom: 5px;
+}
+.genres li,
+.year {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.summary {
+  text-align: justify;
+}
