@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/NOMAD-movie-web-service/static/css/main.863f989b.css",
-    "main.js": "/NOMAD-movie-web-service/static/js/main.b67a8730.js",
+    "main.css": "/NOMAD-movie-web-service/static/css/main.026dff0f.css",
+    "main.js": "/NOMAD-movie-web-service/static/js/main.9656788f.js",
     "index.html": "/NOMAD-movie-web-service/index.html",
-    "main.863f989b.css.map": "/NOMAD-movie-web-service/static/css/main.863f989b.css.map",
-    "main.b67a8730.js.map": "/NOMAD-movie-web-service/static/js/main.b67a8730.js.map"
+    "main.026dff0f.css.map": "/NOMAD-movie-web-service/static/css/main.026dff0f.css.map",
+    "main.9656788f.js.map": "/NOMAD-movie-web-service/static/js/main.9656788f.js.map"
   },
   "entrypoints": [
-    "static/css/main.863f989b.css",
-    "static/js/main.b67a8730.js"
+    "static/css/main.026dff0f.css",
+    "static/js/main.9656788f.js"
   ]
 }
