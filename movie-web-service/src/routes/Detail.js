@@ -20,14 +20,14 @@ export default function Detail() {
     getMovie();
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <div className={styles.loader}>
           <span>Loading...</span>
         </div>
       ) : (
         <div
-          className={styles.container}
+          className={styles.bg}
           style={{
             backgroundImage: `url(${movie.background_image})`,
           }}
